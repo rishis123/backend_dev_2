@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "08d624c7-c9b1-40f1-af64-a3b331b73fff",
+		"name": "PA2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32456037"
+	},
+	"item": [
+		{
+			"name": "Get all (no users yet)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "Add User 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Raahi Menon\",\n    \"username\": \"raahi014\",\n    \"balance\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get user 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/user/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Add User 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Joe Mama\",\n    \"username\": \"joemama123\",\n    \"balance\": 50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "Add User 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "",
+						"variables": ""
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all (3 users)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/user/2/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get remaining users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "Send 1 dollar user1 to user3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sender_id\": 1,\n    \"receiver_id\": 3,\n    \"amount\": 1 //must be <= 2 (user 1's balance) else, insufficient funds error\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/send/"
+			},
+			"response": []
+		},
+		{
+			"name": "Check user1 has 1 dollar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/user/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Check user3 has 32 dollars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/user/3/"
+			},
+			"response": []
+		},
+		{
+			"name": "Reset table to empty",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
